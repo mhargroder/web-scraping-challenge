@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>MARS</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission To Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- Scrapped Mars Data -->
+    <div class="row">
+        <div class = "col-lg-12">
+          <h2> Recent Mars News</h2>
+          <h3> {{data.news_title}}</h3>
+          <p>  {{data.news_content}}</p>
+        </div>
+    </div>
+
+    <div class="row">
+      <div class = "col-lg-8">
+        <h2> Featured Mars Image</h2>
+          <a href={{data.jpl_image}}> 
+            <img src= {{data.jpl_image}} alt="Featured Image" style="width:500px;height:400px;">
+          </a>
+      </div>
+
+      <div class = "col-lg-4">
+        {{data.fact_table}}
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class = "col-lg-12">
+          <h2> Mars Hemispheres</h2>
+      </div>
+    </div>
+
+   <br>
+
+    <div class="row">
+      <div class = "col-lg-6">
+        <a href={{data.mars_hemis[0]["img_url"]}}> 
+          <img src= {{data.mars_hemis[0]["img_url"]}} alt="Cerberus Hemisphere Enhanced" style="width:400px;height:400px;">
+          <h4>{{data.mars_hemis[0]["title"]}}</h4>
+        </a>
+      </div>
+      <div class = "col-lg-6">
+        <a href={{data.mars_hemis[1]["img_url"]}}> 
+          <img src= {{data.mars_hemis[1]["img_url"]}} alt="Schiaparelli Hemisphere Enhanced" style="width:400px;height:400px;">
+          <h4>{{data.mars_hemis[1]["title"]}}</h4>
+        </a>
+      </div>
+    </div>
+
+   <br>
+
+    <div class="row">
+      <div class = "col-lg-6">
+        <a href={{data.mars_hemis[2]["img_url"]}}> 
+          <img src= {{data.mars_hemis[2]["img_url"]}} alt="Syrtis Major Hemisphere Enhanced" style="width:400px;height:400px;">
+          <h4>{{data.mars_hemis[2]["title"]}}</h4>
+        </a>
+      </div>
+      <div class = "col-lg-6">
+        <a href={{data.mars_hemis[3]["img_url"]}}> 
+          <img src= {{data.mars_hemis[3]["img_url"]}} alt="Valles Marineris Hemisphere Enhanced" style="width:400px;height:400px;">
+          <h4>{{data.mars_hemis[3]["title"]}}</h4>
+        </a>
+      </div>
+    </div>
+
+
+  </div>
+</body>
+
+</html>
